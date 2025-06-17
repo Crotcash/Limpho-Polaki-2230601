@@ -1,2 +1,2 @@
-# Limpho-Polaki-2230601
+# Limpho-Polaki
 Student Management System
