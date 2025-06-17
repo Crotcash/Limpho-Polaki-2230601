@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Attendance</title>
+</head>
+<body>
+  <h2>Attendance Records</h2>
+  <table border="1" cellpadding="5" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Student ID</th>
+        <th>Student Name</th>
+        <th>Class ID</th>
+        <th>Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="attendanceTableBody">
+      <!-- Data from PHP will go here -->
+    </tbody>
+  </table>
+
+  <script>
+    // Fetch attendance data from PHP
+    fetch('view_attendance.php')
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.getElementById('attendanceTableBody');
+        if (data.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6">No attendance records found.</td></tr>';
+        } else {
+          data.forEach(row => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td>${row.id}</td>
+              <td>${row.student_id}</td>
+              <td>${row.full_name}</td>
+              <td>${row.class_id}</td>
+              <td>${row.date}</td>
+              <td>${row.status}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+      });
+  </script>
+</body>
+</html>

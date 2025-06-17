@@ -1,0 +1,67 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #e6f2ff;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #e6f2ff; 
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+}
+
+header h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.dashboard-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.card {
+  background: #3498db;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.card:hover {
+  background: #2980b9;
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin: 0;
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.logout {
+  text-decoration: none;
+  color: #e74c3c;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.logout:hover {
+  text-decoration: underline;
+}
+

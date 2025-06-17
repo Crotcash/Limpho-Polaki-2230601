@@ -1,0 +1,48 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f7;
+    padding: 30px;
+}
+h2, h3 {
+	text-align: center;
+    color: #2c3e50;
+}
+form {
+    background: #eef2f7;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+button:hover {
+    background-color: #2980b9;
+}
+.back-button a {
+    color: white;
+    text-decoration: none;
+}
+.message {
+    margin-top: 15px;
+}
+

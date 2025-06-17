@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send Message to Parents</title>
+  <link rel="stylesheet" href="send_message.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Send Message to Parents</h2>
+    <form action="send_message.php" method="POST">
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <label for="parent_ids">Select Parents:</label>
+      <select name="parent_ids[]" id="parent_ids" multiple size="5">
+        <option value="all">-- Send to All --</option>
+        <option value="1">Mathabo Mokoena</option>
+        <option value="2">Malerato Ntsoko</option>
+        <option value="3">Mampho Teba</option>
+      </select>
+
+      <button type="submit">Send</button>
+	  <button type="submit"><a href="teacher_dashboard.html">Back</a></button>
+    </form>
+  </div>
+</body>
+</html>
+
+
+

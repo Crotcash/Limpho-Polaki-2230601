@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search & Update Student</title>
+</head>
+<body>
+
+<h2>Search Student to Edit</h2>
+
+<form method="POST">
+    <label>Enter Student ID:</label>
+    <input type="number" name="search_id" required>
+    <button type="submit">Search</button>
+</form>
+
+<?php if ($student): ?>
+    <h3>Edit Student Details</h3>
+    <form method="POST" action="update_student.php">
+        <input type="hidden" name="student_id" value="<?= $student['id'] ?>">
+        <input type="hidden" name="user_id" value="<?= $student['user_id'] ?>">
+
+        Username:<br>
+        <input type="text" name="username" value="<?= $student['username'] ?>"><br><br>
+
+        Password:<br>
+        <input type="text" name="password" value="<?= $student['password'] ?>"><br><br>
+
+        Class ID:<br>
+        <input type="number" name="class_id" value="<?= $student['class_id'] ?>"><br><br>
+
+        Parent ID:<br>
+        <input type="number" name="parent_id" value="<?= $student['parent_id'] ?>"><br><br>
+
+        Date of Birth:<br>
+        <input type="date" name="dob" value="<?= $student['dob'] ?>"><br><br>
+
+        Gender:<br>
+        <input type="text" name="gender" value="<?= $student['gender'] ?>"><br><br>
+
+        Address:<br>
+        <input type="text" name="address" value="<?= $student['address'] ?>"><br><br>
+
+        Full Name:<br>
+        <input type="text" name="full_name" value="<?= $student['full_name'] ?>"><br><br>
+
+        <button type="submit">Update Student</button>
+    </form>
+<?php elseif ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
+    <p style="color:red;">Student not found.</p>
+<?php endif; ?>
+
+</body>
+</html>
+

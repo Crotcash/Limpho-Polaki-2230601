@@ -1,0 +1,50 @@
+<?php include 'submit_results.php'; ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Term Exam Results</title>
+</head>
+<body>
+
+  <h2>Add Term Exam Results</h2>
+
+  <form method="POST" action="submit_results.php">
+    <label>Class ID: <input type="number" name="class_id" required></label><br><br>
+    <label>Subject: <input type="text" name="subject" required></label><br><br>
+
+    <table border="1" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Term 1</th>
+          <th>Term 2</th>
+          <th>Term 3</th>
+          <th>Term 4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $students = fetchStudents($conn);
+        foreach ($students as $student) {
+            echo "<tr>";
+            echo "<td>{$student['full_name']}<input type='hidden' name='student_ids[]' value='{$student['id']}'></td>";
+            echo "<td><input type='number' name='term1[]' min='0' max='100' required></td>";
+            echo "<td><input type='number' name='term2[]' min='0' max='100' required></td>";
+            echo "<td><input type='number' name='term3[]' min='0' max='100' required></td>";
+            echo "<td><input type='number' name='term4[]' min='0' max='100' required></td>";
+            echo "</tr>";
+        }
+        ?>
+      </tbody>
+    </table><br>
+
+    <button type="submit">Submit Results</button>
+  </form>
+
+</body>
+</html>
+
+
+
+
+
